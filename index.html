@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista - Rechtliche Informationen</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #f59e0b 100%);
+            --page-bg: #f5f5f7;
+            --text: #1a1a1a;
+            --card-bg: #ffffff;
+            --card-shadow: 0 10px 40px rgba(15, 23, 42, 0.12);
+            --muted: #666;
+            --link-bg: #f5f5f7;
+            --link-text: #1a1a1a;
+            --link-hover-bg: #667eea;
+            --link-hover-text: #ffffff;
+            --footer: rgba(17, 24, 39, 0.6);
+            --toggle-bg: rgba(255, 255, 255, 0.2);
+            --toggle-text: #ffffff;
+            --toggle-border: rgba(255, 255, 255, 0.4);
+        }
+        :root[data-theme="dark"] {
+            --page-bg: #0f1115;
+            --text: #e5e7eb;
+            --card-bg: #171a21;
+            --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            --muted: #94a3b8;
+            --link-bg: #1f2937;
+            --link-text: #e5e7eb;
+            --link-hover-bg: #8b5cf6;
+            --link-hover-text: #ffffff;
+            --footer: rgba(255, 255, 255, 0.5);
+            --toggle-bg: rgba(0, 0, 0, 0.35);
+            --toggle-border: rgba(255, 255, 255, 0.2);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--page-bg);
+            min-height: 100vh;
+            color: var(--text);
+        }
+        .header {
+            background: var(--bg-gradient);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .header h1 { font-size: 42px; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 18px; }
+        .theme-toggle {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            border: 1px solid var(--toggle-border);
+            background: var(--toggle-bg);
+            color: var(--toggle-text);
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 600px;
+            margin: -40px auto 40px;
+            padding: 0 20px;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+        }
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .lang-section {
+            margin-bottom: 25px;
+        }
+        .lang-section h3 {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .links a {
+            padding: 14px 20px;
+            background: var(--link-bg);
+            color: var(--link-text);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .links a:hover {
+            background: var(--link-hover-bg);
+            color: var(--link-hover-text);
+        }
+        .links a span { opacity: 0.5; }
+        .contact {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--link-bg);
+            text-align: center;
+        }
+        .contact p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .contact a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--footer);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Vista</h1>
+        <p>Rechtliche Informationen</p>
+        <button class="theme-toggle" id="theme-toggle" type="button">Dark</button>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>Rechtliche Dokumente</h2>
+
+            <div class="lang-section">
+                <h3>Deutsch</h3>
+                <div class="links">
+                    <a href="de/datenschutz.html">Datenschutzerklärung <span>→</span></a>
+                    <a href="de/nutzungsbedingungen.html">Nutzungsbedingungen <span>→</span></a>
+                    <a href="de/impressum.html">Impressum <span>→</span></a>
+                </div>
+            </div>
+
+            <div class="lang-section">
+                <h3>English</h3>
+                <div class="links">
+                    <a href="en/privacy.html">Privacy Policy <span>→</span></a>
+                    <a href="en/terms.html">Terms of Service <span>→</span></a>
+                    <a href="en/imprint.html">Imprint <span>→</span></a>
+                </div>
+            </div>
+
+            <div class="contact">
+                <p>Kontakt / Contact</p>
+                <a href="mailto:support@codecraftcom.de">support@codecraftcom.de</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 CodeCraft · Vista</p>
+    </div>
+    <script>
+        (function() {
+            const root = document.documentElement;
+            const toggle = document.getElementById('theme-toggle');
+            const stored = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = stored || (prefersDark ? 'dark' : 'light');
+            root.dataset.theme = theme;
+            toggle.textContent = theme === 'dark' ? 'Light' : 'Dark';
+            toggle.addEventListener('click', () => {
+                const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+                root.dataset.theme = nextTheme;
+                localStorage.setItem('theme', nextTheme);
+                toggle.textContent = nextTheme === 'dark' ? 'Light' : 'Dark';
+            });
+        })();
+    </script>
+</body>
+</html>

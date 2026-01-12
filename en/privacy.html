@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Vista</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --page-bg: #f5f5f7;
+            --text: #1a1a1a;
+            --header-gradient: linear-gradient(135deg, #667eea 0%, #f59e0b 100%);
+            --section-bg: #ffffff;
+            --section-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            --accent: #667eea;
+            --border: #f0f0f0;
+            --muted: #444;
+            --strong: #1a1a1a;
+            --link-bg: #667eea;
+            --link-bg-hover: #5a67d8;
+            --link-text: #ffffff;
+            --footer: #999999;
+            --toggle-bg: rgba(255, 255, 255, 0.2);
+            --toggle-text: #ffffff;
+            --toggle-border: rgba(255, 255, 255, 0.4);
+        }
+        :root[data-theme="dark"] {
+            --page-bg: #0f1115;
+            --text: #e5e7eb;
+            --section-bg: #171a21;
+            --section-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+            --border: #2a2f3a;
+            --muted: #cbd5e1;
+            --strong: #f8fafc;
+            --link-bg: #8b5cf6;
+            --link-bg-hover: #7c3aed;
+            --footer: #8a8f98;
+            --toggle-bg: rgba(0, 0, 0, 0.35);
+            --toggle-border: rgba(255, 255, 255, 0.2);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--page-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .header {
+            background: var(--header-gradient);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .header h1 { font-size: 28px; margin-bottom: 5px; }
+        .header p { opacity: 0.9; font-size: 14px; }
+        .lang-switch {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--toggle-bg);
+            color: var(--toggle-text);
+            border: 1px solid var(--toggle-border);
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-size: 12px;
+            text-decoration: none;
+        }
+        .lang-switch:hover { background: rgba(255, 255, 255, 0.3); }
+        .container { max-width: 800px; margin: 0 auto; padding: 30px 20px; }
+        .section {
+            background: var(--section-bg);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--section-shadow);
+        }
+        h2 {
+            color: var(--accent);
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+        }
+        p { margin-bottom: 12px; color: var(--muted); }
+        ul { margin: 15px 0; padding-left: 25px; }
+        li { margin-bottom: 8px; color: var(--muted); }
+        strong { color: var(--strong); }
+        a { color: var(--accent); }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: var(--link-bg);
+            color: var(--link-text);
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+        .back-link:hover { background: var(--link-bg-hover); }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--footer);
+            font-size: 14px;
+        }
+        .footer a { color: var(--footer); }
+        .theme-toggle {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            border: 1px solid var(--toggle-border);
+            background: var(--toggle-bg);
+            color: var(--toggle-text);
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Privacy Policy</h1>
+        <p>Last updated: January 2025</p>
+        <a href="../de/datenschutz.html" class="lang-switch">Deutsch</a>
+        <button class="theme-toggle" id="theme-toggle" type="button">Dark</button>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>1. Data Controller</h2>
+            <p>The data controller for this app is:</p>
+            <p><strong>CodeCraft</strong><br>
+            Matthias Steins<br>
+            Stationsweg 69<br>
+            41068 Moenchengladbach<br>
+            Germany</p>
+            <p>Email: <a href="mailto:support@codecraftcom.de">support@codecraftcom.de</a></p>
+        </div>
+
+        <div class="section">
+            <h2>2. What Data Do We Collect?</h2>
+            <p>Vista is a financial planning app that stores your data <strong>locally on your device</strong>. We collect:</p>
+            <ul>
+                <li><strong>Financial Data:</strong> Income, expenses, assets, savings goals - stored exclusively on your device</li>
+                <li><strong>iCloud Sync:</strong> Optionally sync your data via iCloud. This data is stored in your personal iCloud account</li>
+                <li><strong>Purchase Data:</strong> In-app purchases are processed through Apple. We have no access to your payment information</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>3. Purpose of Data Processing</h2>
+            <ul>
+                <li>Calculate your freedom age and wealth trajectory</li>
+                <li>Tax optimization for the DACH region (Germany, Austria, Switzerland)</li>
+                <li>Synchronization between your devices (optional)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. Data Sharing</h2>
+            <p>We do <strong>not</strong> share your data with third parties. All calculations are performed locally on your device.</p>
+        </div>
+
+        <div class="section">
+            <h2>5. Data Retention</h2>
+            <p>Your data is stored as long as you use the app. When you delete the app, all local data is removed. iCloud data can be deleted separately in your iCloud settings.</p>
+        </div>
+
+        <div class="section">
+            <h2>6. Your Rights</h2>
+            <p>You have the following rights:</p>
+            <ul>
+                <li><strong>Access:</strong> Access to your stored data</li>
+                <li><strong>Rectification:</strong> Correction of inaccurate data</li>
+                <li><strong>Erasure:</strong> Deletion of your data</li>
+                <li><strong>Restriction:</strong> Restriction of processing</li>
+                <li><strong>Data Portability:</strong> Export of your data</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>7. Security</h2>
+            <p>Vista supports Face ID / Touch ID to protect your sensitive financial data. All data is stored encrypted on your device.</p>
+        </div>
+
+        <div class="section">
+            <h2>8. Changes</h2>
+            <p>This privacy policy may be updated. The current version is always available in the app under Settings > Privacy.</p>
+        </div>
+
+        <div class="section">
+            <h2>9. Contact</h2>
+            <p>For privacy questions, contact us at: <a href="mailto:support@codecraftcom.de">support@codecraftcom.de</a></p>
+        </div>
+
+        <a href="imprint.html" class="back-link">Imprint</a>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 CodeCraft · Vista</p>
+    </div>
+    <script>
+        (function() {
+            const root = document.documentElement;
+            const toggle = document.getElementById('theme-toggle');
+            const stored = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = stored || (prefersDark ? 'dark' : 'light');
+            root.dataset.theme = theme;
+            toggle.textContent = theme === 'dark' ? 'Light' : 'Dark';
+            toggle.addEventListener('click', () => {
+                const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+                root.dataset.theme = nextTheme;
+                localStorage.setItem('theme', nextTheme);
+                toggle.textContent = nextTheme === 'dark' ? 'Light' : 'Dark';
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum - Vista</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --page-bg: #f5f5f7;
+            --text: #1a1a1a;
+            --header-gradient: linear-gradient(135deg, #667eea 0%, #f59e0b 100%);
+            --section-bg: #ffffff;
+            --section-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            --accent: #667eea;
+            --border: #f0f0f0;
+            --muted: #444;
+            --strong: #1a1a1a;
+            --link-bg: #667eea;
+            --link-bg-hover: #5a67d8;
+            --link-text: #ffffff;
+            --footer: #999999;
+            --toggle-bg: rgba(255, 255, 255, 0.2);
+            --toggle-text: #ffffff;
+            --toggle-border: rgba(255, 255, 255, 0.4);
+        }
+        :root[data-theme="dark"] {
+            --page-bg: #0f1115;
+            --text: #e5e7eb;
+            --section-bg: #171a21;
+            --section-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+            --border: #2a2f3a;
+            --muted: #cbd5e1;
+            --strong: #f8fafc;
+            --link-bg: #8b5cf6;
+            --link-bg-hover: #7c3aed;
+            --footer: #8a8f98;
+            --toggle-bg: rgba(0, 0, 0, 0.35);
+            --toggle-border: rgba(255, 255, 255, 0.2);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--page-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .header {
+            background: var(--header-gradient);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .header h1 { font-size: 28px; margin-bottom: 5px; }
+        .header p { opacity: 0.9; font-size: 14px; }
+        .lang-switch {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--toggle-bg);
+            color: var(--toggle-text);
+            border: 1px solid var(--toggle-border);
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-size: 12px;
+            text-decoration: none;
+        }
+        .lang-switch:hover { background: rgba(255, 255, 255, 0.3); }
+        .container { max-width: 800px; margin: 0 auto; padding: 30px 20px; }
+        .section {
+            background: var(--section-bg);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--section-shadow);
+        }
+        h2 {
+            color: var(--accent);
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+        }
+        p { margin-bottom: 12px; color: var(--muted); }
+        strong { color: var(--strong); }
+        a { color: var(--accent); }
+        .links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .links a:hover { text-decoration: underline; }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--footer);
+            font-size: 14px;
+        }
+        .footer a { color: var(--footer); }
+        .theme-toggle {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            border: 1px solid var(--toggle-border);
+            background: var(--toggle-bg);
+            color: var(--toggle-text);
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Impressum</h1>
+        <p>Vista · CodeCraft</p>
+        <a href="../en/imprint.html" class="lang-switch">English</a>
+        <button class="theme-toggle" id="theme-toggle" type="button">Dark</button>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Angaben gemäß § 5 TMG</h2>
+            <p><strong>CodeCraft</strong><br>
+            Matthias Steins<br>
+            Stationsweg 69<br>
+            41068 Mönchengladbach<br>
+            Deutschland</p>
+        </div>
+
+        <div class="section">
+            <h2>Kontakt</h2>
+            <p>E-Mail: <a href="mailto:support@codecraftcom.de">support@codecraftcom.de</a></p>
+        </div>
+
+        <div class="section">
+            <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+            <p><strong>Matthias Steins</strong><br>
+            Stationsweg 69<br>
+            41068 Mönchengladbach</p>
+        </div>
+
+        <div class="section">
+            <h2>Haftungsausschluss</h2>
+            <p><strong>Haftung für Inhalte:</strong> Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+            <p><strong>Haftung für Links:</strong> Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+        </div>
+
+        <div class="section">
+            <h2>Urheberrecht</h2>
+            <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+        </div>
+
+        <div class="section">
+            <h2>Weitere rechtliche Informationen</h2>
+            <div class="links">
+                <a href="datenschutz.html">Datenschutzerklärung</a>
+                <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 CodeCraft · Vista</p>
+    </div>
+    <script>
+        (function() {
+            const root = document.documentElement;
+            const toggle = document.getElementById('theme-toggle');
+            const stored = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = stored || (prefersDark ? 'dark' : 'light');
+            root.dataset.theme = theme;
+            toggle.textContent = theme === 'dark' ? 'Light' : 'Dark';
+            toggle.addEventListener('click', () => {
+                const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+                root.dataset.theme = nextTheme;
+                localStorage.setItem('theme', nextTheme);
+                toggle.textContent = nextTheme === 'dark' ? 'Light' : 'Dark';
+            });
+        })();
+    </script>
+</body>
+</html>
