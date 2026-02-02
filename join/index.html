@@ -231,7 +231,7 @@
 
         <div id="buttons">
             <a href="#" class="button" id="openApp">In Stashy öffnen</a>
-            <a href="https://apps.apple.com/app/stashy-savings-goals/id6504628638" class="button secondary">
+            <a href="#" class="button secondary" id="downloadApp">
                 App herunterladen
             </a>
         </div>
@@ -258,32 +258,61 @@
     </div>
 
     <script>
+        // Detect platform
+        const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+        const isAndroid = /Android/.test(navigator.userAgent);
+
+        // Store URLs
+        const APP_STORE_URL = 'https://apps.apple.com/app/stashy-savings-goals/id6504628638';
+        const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.matthiassteins.stashy';
+
         // Extract team code from URL path
         const path = window.location.pathname;
         const parts = path.split('/').filter(p => p);
         const joinIndex = parts.findIndex(p => p.toLowerCase() === 'join' || p.toLowerCase() === 'team');
         const code = (joinIndex >= 0 && joinIndex + 1 < parts.length) ? parts[joinIndex + 1].toUpperCase() : null;
 
+        // Set download button URL based on platform
+        const downloadBtn = document.getElementById('downloadApp');
+        if (isAndroid) {
+            downloadBtn.href = PLAY_STORE_URL;
+            downloadBtn.textContent = 'Im Play Store laden';
+        } else {
+            downloadBtn.href = APP_STORE_URL;
+            downloadBtn.textContent = 'Im App Store laden';
+        }
+
         if (code) {
             document.getElementById('teamCode').textContent = code;
 
-            // Update Smart App Banner with actual code
+            // Update Smart App Banner with actual code (iOS Safari)
             const metaTag = document.querySelector('meta[name="apple-itunes-app"]');
             if (metaTag) {
                 metaTag.content = `app-id=6504628638, app-argument=stashy://join/${code}`;
             }
 
             const customSchemeURL = `stashy://join/${code}`;
+            const intentURL = `intent://join/${code}#Intent;scheme=stashy;package=com.matthiassteins.stashy;end`;
             const openAppBtn = document.getElementById('openApp');
-            openAppBtn.href = customSchemeURL;
 
-            // Try to open app automatically on iOS
-            if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+            // Set appropriate deep link based on platform
+            if (isAndroid) {
+                openAppBtn.href = intentURL;
+            } else {
+                openAppBtn.href = customSchemeURL;
+            }
+
+            // Try to open app automatically
+            if (isIOS || isAndroid) {
                 document.getElementById('loading').classList.add('active');
                 document.getElementById('buttons').style.display = 'none';
 
                 // Try custom URL scheme
-                window.location.href = customSchemeURL;
+                if (isAndroid) {
+                    window.location.href = intentURL;
+                } else {
+                    window.location.href = customSchemeURL;
+                }
 
                 // If app doesn't open after 2.5 seconds, show buttons
                 setTimeout(() => {
