@@ -165,9 +165,12 @@
 
     <script>
         // Extract team code from URL path
+        // Handles: /Stashy-legal/join/CODE or /join/CODE
         const path = window.location.pathname;
         const parts = path.split('/').filter(p => p);
-        const code = parts.length > 1 ? parts[1].toUpperCase() : null;
+        // Find index of 'join' or 'team' and get the next part
+        const joinIndex = parts.findIndex(p => p.toLowerCase() === 'join' || p.toLowerCase() === 'team');
+        const code = (joinIndex >= 0 && joinIndex + 1 < parts.length) ? parts[joinIndex + 1].toUpperCase() : null;
 
         if (code) {
             document.getElementById('teamCode').textContent = code;
